@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070e1b">
+  <title>TRADING PULSE · KR/US 실전 트레이딩 데스크</title>
+  <style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:dark;--bg:#070d19;--panel:#0d1727;--line:#1d2b3f;--muted:#8390a5;--text:#e8edf7;--mint:#56d9ba;--teal:#38bca0;--red:#fa7e84;--amber:#e9bf72;--font:'Inter','DM Sans',-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif}
+*{box-sizing:border-box}html{min-width:340px}body{margin:0;background:radial-gradient(ellipse 600px 350px at 70% -10%,rgba(27,90,111,.14),transparent),var(--bg);color:var(--text);font:14px var(--font);letter-spacing:-.2px}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:wait;opacity:.62}a{color:inherit;text-decoration:none}.shell{min-height:100vh}.topbar{height:80px;border-bottom:1px solid var(--line);background:rgba(9,16,30,.94);display:flex;align-items:center;gap:30px;padding:0 max(26px,calc((100vw - 1540px)/2));position:relative;z-index:10}.brand{display:flex;align-items:center;gap:11px;white-space:nowrap}.brand-symbol{width:43px;height:43px;display:grid;place-items:center;background:linear-gradient(135deg,#173f43,#0c2635);border:1px solid #225557;border-radius:12px}.brand strong{font-size:19px;font-weight:800;letter-spacing:-.9px}.brand strong span{color:var(--mint)}.brand small{display:block;margin-top:4px;color:#718299;font-size:9px;letter-spacing:2.2px;font-weight:700}.market-tabs{margin-left:46px;display:flex;align-items:center;gap:6px;background:#0c1422;border:1px solid #1b293b;border-radius:10px;padding:5px}.market-tab{border:0;border-radius:7px;padding:11px 21px;background:transparent;color:#8b9aaf;font-weight:700;white-space:nowrap}.market-tab.active{background:#1b3041;color:#eafff8;box-shadow:inset 0 0 0 1px #2a5557}.tab-tiny{font-size:10px;opacity:.55;margin-left:4px}.header-right{margin-left:auto;display:flex;gap:22px;align-items:center}.header-time{color:#a9b4c3;font-size:12px;font-weight:700;letter-spacing:.3px;white-space:nowrap}.connection{display:flex;align-items:center;gap:8px;color:#a4b3c3;font-size:11px;white-space:nowrap;padding:8px 11px;background:#111c2b;border:1px solid var(--line);border-radius:24px}.connection .dot,.live-pulse{display:inline-block;width:7px;height:7px;border-radius:100%;background:#dfbd73;box-shadow:0 0 0 3px #dfbd7312}.connection.ready .dot{background:var(--mint);box-shadow:0 0 0 3px #56d9ba20}.content{max-width:1540px;margin:auto;padding:34px 26px 30px}.kicker{color:var(--mint);font-size:10px;font-weight:800;letter-spacing:2px;display:flex;align-items:center;gap:10px}.live-pulse{background:var(--mint);box-shadow:0 0 0 3px #56d9ba20}.kicker-divider{height:11px;width:1px;background:#3a5560;margin:0 5px}.page-intro{display:flex;justify-content:space-between;align-items:center;gap:25px;margin:13px 0 28px}.page-intro h1{margin:0 0 12px;font-size:clamp(24px,2.5vw,37px);font-weight:800;letter-spacing:-1.65px}.page-intro h1 em{font-style:normal;color:var(--mint)}.page-intro p{margin:0;color:#8292a7;font-size:13px}.hero-actions{display:flex;gap:9px;flex-shrink:0}.primary-button{border:1px solid #55e6c9;background:linear-gradient(135deg,#65eaca,#3cc1a7);color:#09252b;padding:15px 23px;border-radius:10px;font-size:13px;font-weight:800;box-shadow:0 6px 24px #36bca122;min-width:185px}.primary-button:hover{filter:brightness(1.08)}.button-icon{font-size:18px;vertical-align:-1px;margin-right:7px}.secondary-button{padding:14px 15px;border-radius:10px;background:#101c2d;color:#d2dbe8;border:1px solid #2a3b50;font-weight:700;font-size:12px}.secondary-button span{margin-left:8px;color:#79b6ac}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:17px}.metric{border:1px solid var(--line);border-radius:11px;padding:19px 22px 18px;background:linear-gradient(135deg,#101d2d,#0c1524)}.metric-top{color:#9facc0;font-weight:650;font-size:12px;display:flex;justify-content:space-between}.metric-top>span{color:#5c8d92;font-size:17px}.metric-value{font-size:27px;font-weight:800;letter-spacing:-1px;margin:13px 0 10px;min-height:33px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.metric-value small{font-size:13px;color:#8c9aac;margin-left:6px}.metric-value.small{font-size:20px}.metric-foot{color:#728399;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.text-mint{color:var(--mint)}.notice{padding:11px 16px;border-radius:8px;border:1px solid #29384c;background:#101a2b;color:#9cadc3;margin-bottom:16px;font-size:12px;line-height:1.55}.notice strong{color:#e0e8f2}.notice.error{border-color:#653841;background:#2b1823;color:#f0a3aa}.notice.success{border-color:#2d544d;background:#10261f;color:#b1ead8}.workspace{display:grid;grid-template-columns:minmax(400px,43fr) minmax(470px,57fr);gap:16px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#0e1828,#0b1422);min-width:0;overflow:hidden}.panel-titlebar,.chart-titlebar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:23px 23px 17px}.eyebrow{font-size:10px;letter-spacing:1.6px;color:#5ab8aa;font-weight:800;margin-bottom:7px}.panel-titlebar h2,.chart-titlebar h2{font-size:19px;margin:0;font-weight:800;letter-spacing:-.7px}.section-caption{font-size:10px;vertical-align:3px;font-weight:650;border:1px solid #29443f;color:#7ac5ba;border-radius:4px;padding:3px 6px;margin-left:6px}.info-badge{background:#14382f;border:1px solid #235446;color:#80e7c3;border-radius:6px;padding:6px 8px;font-size:10px;font-weight:750;white-space:nowrap}.info-badge.neutral{color:#a5b8ce;background:#1b2b3e;border-color:#2e4056}.list-caption{border-bottom:1px solid var(--line);padding:0 23px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;color:#8495a9;font-size:11px}.list-caption b{color:#c9d4e1}.auto-wrap{display:flex;gap:6px;align-items:center;white-space:nowrap;color:#acbfd0;cursor:pointer}.auto-wrap input{accent-color:var(--teal)}.rank-head{padding:14px 22px;display:grid;grid-template-columns:minmax(145px,1fr) 99px 57px 90px;gap:8px;font-size:10px;color:#6f8198;font-weight:700;border-bottom:1px solid var(--line);text-align:right}.rank-head>span:first-child{text-align:left}.ranking-list{min-height:530px}.ranking-item{display:grid;grid-template-columns:minmax(145px,1fr) 99px 57px 90px;gap:8px;align-items:center;padding:13px 21px;border:none;border-bottom:1px solid #1c2a3a;background:transparent;color:inherit;width:100%;text-align:left;min-height:57px;transition:.13s}.ranking-item:hover{background:#172537}.ranking-item.selected{background:linear-gradient(90deg,#17403880,#142535);box-shadow:inset 3px 0 0 #55dbc0}.rank-name{display:flex;gap:10px;align-items:center;min-width:0}.rank-num{font-weight:800;color:#78899c;font-size:12px;width:22px;text-align:center;flex:none}.ranking-item.selected .rank-num{color:var(--mint)}.rank-company{min-width:0}.rank-company strong{display:block;font-size:12px;font-weight:800;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.rank-company small{display:block;margin-top:4px;color:#698098;font-size:10px}.rank-price{text-align:right;font-weight:700;font-size:12px;white-space:nowrap}.rank-price small{display:block;font-size:10px;margin-top:3px;color:#8294a9}.rank-score{text-align:center;font-weight:850;font-size:14px;color:#61d8bf}.rank-score.low{color:#d5b37c}.signal-chip{padding:6px 3px;text-align:center;font-weight:750;font-size:10px;border:1px solid #36524c;background:#1b3c36;color:#85dcc1;border-radius:5px;white-space:nowrap}.signal-chip.wait{background:#1b283a;border-color:#293b4f;color:#9aabc1}.signal-chip.sell{background:#412530;border-color:#6a3b4a;color:#fab0b6}.ranking-footer{height:48px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;color:#697e91;font-size:10px;border-top:1px solid var(--line)}.empty-state{min-height:520px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:24px;color:#70839b}.empty-glyph{font-size:65px;font-weight:200;color:#244b51}.empty-state h3{margin:0;font-size:14px;color:#b5c4d3}.empty-state p{margin:0;max-width:280px;line-height:1.75;font-size:12px}.chart-titlebar{padding-bottom:13px}.ticker-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:9px}.ticker-pill{background:#1e3443;color:#80d3c9;font-size:11px;padding:4px 8px;border-radius:4px;font-weight:750}.data-label{color:#8b9eb4;font-size:10px}.chart-actions a{display:inline-block;border:1px solid #314558;color:#a9c2d3;padding:9px 10px;border-radius:6px;font-size:11px;white-space:nowrap}.chart-frame{height:300px;margin:0 19px;border-radius:8px;overflow:hidden;border:1px solid #26394a;background:#0b1422}.tv-chart{height:100%;width:100%;position:relative}.chart-loading{color:#6f829a;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font-size:12px}.chart-disclaimer{font-size:10px;color:#70849b;line-height:1.6;padding:9px 22px 17px}.signals-title{border-top:1px solid var(--line);padding:17px 22px 13px;display:flex;justify-content:space-between;gap:10px;align-items:center}.signals-title h3{margin:0;font-size:16px}.mini-tag{font-size:10px;color:#8795aa}.timeframes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:0 19px 20px}.timeframe-card{border:1px solid #2c3b4f;border-radius:9px;background:#111e30;padding:13px 12px;min-width:0;text-align:left;color:#d6e2ee;transition:.1s}.timeframe-card:hover{border-color:#489986}.timeframe-card.selected{border-color:#49beaa;background:#142c32;box-shadow:inset 0 0 0 1px #3f9986}.timeframe-card h4{margin:0 0 14px;color:#97a7ba;font-size:10px;display:flex;justify-content:space-between;gap:3px}.timeframe-card h4 strong{font-size:14px;color:#e5f3ee}.timeframe-status{font-size:12px;font-weight:850;margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.timeframe-status.good{color:#67e0bc}.timeframe-status.sell{color:#f095a2}.timeframe-status.normal{color:#a9b6c8}.timeframe-meta{font-size:10px;line-height:1.75;color:#768ba2}.timeframe-meta b{color:#c3d0dd;font-weight:650}.timeframe-placeholder{grid-column:1/-1;padding:40px 20px;text-align:center;color:#7c8fa4;background:#101b2b;border-radius:8px;font-size:12px}.bottom-grid{margin-top:16px;display:grid;grid-template-columns:1.18fr .82fr;gap:16px}.plan-intro{color:#97a9bd;padding:0 23px 14px;font-size:12px;line-height:1.55}.price-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:2px 20px 18px;gap:8px}.price-item{padding:13px 12px;background:#101e2f;border:1px solid #23364b;border-radius:7px;min-width:0}.price-item>span{display:block;color:#8fa1b5;font-size:10px;white-space:nowrap}.price-item strong{display:block;font-size:19px;font-weight:850;letter-spacing:-.4px;margin:11px 0;color:#58dbb8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.price-item strong.red-text{color:#f28b91}.price-item small{font-size:10px;color:#667e95}.plan-footer{margin:0 23px 20px;padding:12px 0 0;display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);font-size:10px;color:#7287a0}.watch-desc{margin:-1px 23px 13px;line-height:1.6;font-size:11px;color:#889bb1}.watch-form{margin:0 23px 20px;display:flex;gap:8px}.watch-form input{flex:1;width:1px;border:1px solid #32445a;background:#071220;color:#dee9f5;padding:12px;font-size:12px;border-radius:7px;outline:none;text-transform:uppercase}.watch-form input:focus{border-color:#6bd3bd}.watch-form button{padding:0 13px;border:none;color:#0c2d2a;background:#71deba;font-weight:850;font-size:12px;border-radius:7px}.watch-header{margin:0 23px 12px;font-size:11px;color:#acbfd0;font-weight:750}.watch-header span{color:#69dec0}.watch-chips{min-height:50px;margin:0 23px 14px;display:flex;gap:7px;flex-wrap:wrap;align-items:flex-start}.watch-chip{background:#17293d;border:1px solid #29425a;color:#c0d2e2;font-size:11px;padding:7px 7px 7px 9px;border-radius:5px;white-space:nowrap}.watch-chip button{border:none;background:none;color:#72899f;margin-left:6px;font-size:14px}.watch-chip button:hover{color:var(--red)}.muted{color:#71879c;font-size:11px}.watch-foot{font-size:10px;color:#7189a0;border-top:1px solid var(--line);padding:13px 23px 18px}.footer{margin-top:20px;display:flex;justify-content:space-between;gap:20px;color:#66809b;font-size:10px}.footer>div:first-child{font-weight:800;color:#92b8b5;letter-spacing:.4px}.footer span{font-weight:400;color:#6a8298;margin-left:6px}.modal-backdrop{position:fixed;inset:0;background:#020712c9;z-index:50;display:grid;place-items:center;padding:20px}.modal{position:relative;max-width:580px;width:100%;border:1px solid #355264;border-radius:12px;background:#101e30;box-shadow:0 22px 80px #0009;padding:30px}.modal h2{font-size:23px;margin:9px 0 18px}.modal ol{padding-left:20px;color:#b0bfce;font-size:13px;line-height:1.95}.modal li{padding-left:5px;margin-bottom:8px}.modal code{font-size:12px;color:#6bdab8;background:#142f37;padding:3px 5px;border-radius:3px}.modal-tip{background:#172b3b;border:1px solid #2b4355;border-radius:7px;padding:13px;color:#a2b4c3;line-height:1.8;font-size:11px}.close{position:absolute;right:16px;top:16px;border:none;background:transparent;color:#a2b1c0;font-size:17px}.modal-buttons{display:flex;justify-content:flex-end;gap:12px;margin-top:23px;align-items:center}.modal-buttons a{font-size:12px;color:#7fdac5}.modal-buttons button{background:var(--mint);color:#0c2522;padding:11px 22px;border-radius:6px;font-weight:800;border:0}.toast{position:fixed;z-index:100;bottom:28px;right:28px;max-width:380px;padding:14px 18px;border:1px solid #3b5a61;background:#192f3c;color:#d8eee9;border-radius:9px;box-shadow:0 10px 45px #0007;font-size:12px;line-height:1.7}.hidden{display:none!important}@media(max-width:1250px){.topbar{padding:0 20px}.market-tabs{margin-left:10px}.workspace{grid-template-columns:1fr 1.08fr}.rank-head,.ranking-item{grid-template-columns:minmax(105px,1fr) 76px 43px 74px;gap:4px}.ranking-item{padding:12px 11px}.rank-head{padding:12px 11px}.timeframes{grid-template-columns:repeat(2,1fr)}.chart-frame{height:320px}.bottom-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:980px){.topbar{height:auto;min-height:74px;flex-wrap:wrap;padding:15px 16px;gap:14px}.brand{flex:1}.market-tabs{order:3;margin-left:0;width:100%}.market-tab{flex:1}.header-right{margin-left:0}.content{padding:26px 16px}.metric-grid{grid-template-columns:repeat(2,1fr)}.workspace{grid-template-columns:1fr}.ranking-list{min-height:260px}.empty-state{min-height:300px}.chart-frame{height:380px}.timeframes{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:620px){.header-time{display:none}.page-intro{align-items:flex-start;flex-direction:column}.hero-actions{width:100%}.hero-actions button:first-child{flex:1}.page-intro h1{font-size:27px}.metric{padding:14px}.metric-value{font-size:23px}.metric-foot{font-size:10px}.rank-head,.ranking-item{grid-template-columns:minmax(95px,1fr) 80px 40px 74px}.rank-price{font-size:11px}.rank-company strong{font-size:11px}.rank-num{width:15px}.timeframes{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr)}.chart-frame{height:320px}.panel-titlebar,.chart-titlebar{padding-left:17px;padding-right:17px}.list-caption{padding-left:17px;padding-right:17px;flex-wrap:wrap}.footer{flex-direction:column}.plan-footer{flex-wrap:wrap}}
+
+.logout-form {display:inline-flex;margin:0} .logout-form button{background:transparent;color:#94a9bc;border:1px solid #2d4157;border-radius:9px;padding:8px 11px;cursor:pointer;font-size:12px} .oauth-panel{border:1px solid #2e455b;background:rgba(18,35,51,.6);padding:16px;border-radius:12px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}.oauth-panel .primary-button{font-size:13px;padding:11px 14px}.oauth-feedback{color:#acc5d7;font-size:12px;line-height:1.8;flex:1;min-width:190px}.oauth-feedback a{color:#69e7ce;display:inline-block;border-bottom:1px solid currentColor;padding:2px;margin-top:4px}
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-symbol"><svg viewBox="0 0 40 40" width="36" height="36"><path d="M3 24 L11 24 L16 11 L22 33 L27 18 L31 23 L38 23" stroke="#64e7cd" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg></div><div><strong>TRADING <span>PULSE</span></strong><small>KR / US MARKET INTELLIGENCE</small></div></div>
+      <nav class="market-tabs" role="tablist" aria-label="국내 미국 시장">
+        <button id="tabUS" class="market-tab active" data-market="US" type="button"><span>🇺🇸</span> 미국주식 <span class="tab-tiny">US</span></button>
+        <button id="tabKR" class="market-tab" data-market="KR" type="button"><span>🇰🇷</span> 국내주식 <span class="tab-tiny">KR</span></button>
+      </nav>
+      <div class="header-right">
+        <span class="header-time" id="kstClock">KST --:--:--</span>
+        <span class="connection" id="connStatus"><span class="dot"></span> 연동 확인 중</span>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="kicker"><span class="live-pulse"></span> TRADING RESEARCH DESK <span class="kicker-divider"></span> TRADINGVIEW OFFICIAL MCP · CLOUD WEB APP</div>
+      <div class="page-intro">
+        <div><h1>시장을 읽고, <em>기회를 선별하다.</em></h1><p>거래량 · 추세 · 변동성을 함께 확인하는 국내·미국 주식 단기매매 분석 데스크</p></div>
+        <div class="hero-actions"><button class="primary-button" id="scanButton" type="button"><span class="button-icon">↻</span> <span id="scanLabel">TOP 10 지금 분석</span></button><button class="secondary-button" id="guideButton" type="button">연동 안내 <span>↗</span></button></div>
+      </div>
+
+      <section class="metric-grid" aria-label="시장 지표">
+        <div class="metric"><div class="metric-top">시장 상태 <span>◉</span></div><div class="metric-value"><span id="marketPhase">확인 중</span></div><div class="metric-foot" id="marketLocal">거래소 현지 시간 확인 중</div></div>
+        <div class="metric"><div class="metric-top">분석 후보 <span>↗</span></div><div class="metric-value"><span id="candidateCount">—</span><small>종목</small></div><div class="metric-foot">TradingView 스크리너 / 관심종목</div></div>
+        <div class="metric"><div class="metric-top">매수 감시 신호 <span>◎</span></div><div class="metric-value text-mint"><span id="buySignalCount">—</span><small>종목</small></div><div class="metric-foot">확정된 최근 1분봉 기준</div></div>
+        <div class="metric"><div class="metric-top">마지막 데이터 갱신 <span>◷</span></div><div class="metric-value small"><span id="scanUpdated">분석 전</span></div><div class="metric-foot" id="sourceStatus">실제 데이터만 표시 · 예시 수치 없음</div></div>
+      </section>
+
+      <div class="notice" style="background:#45350c;border-color:#a48329;color:#fbe19a;margin-bottom:14px"><b>웹앱 UI 미리보기</b> — 서버·TradingView 계정 미연결 상태입니다. 차트는 공식 TradingView 위젯을 이용하지만, 아래 TOP10 및 매매가격은 실제 MCP 인증 후에만 표시됩니다.</div><div id="notice" class="notice" role="status">TradingView 계정을 연결한 뒤 <strong>TOP 10 지금 분석</strong>을 클릭하세요. 시세를 받기 전까지 추천 순위와 매매가격은 표시하지 않습니다.</div>
+
+      <section class="workspace">
+        <div class="left-pane panel">
+          <div class="panel-titlebar"><div><div class="eyebrow">OPPORTUNITY RANKING</div><h2>트레이딩 후보 TOP 10 <span class="section-caption" id="rankingMarket">미국</span></h2></div><span class="info-badge" id="rankingData">미분석</span></div>
+          <div class="list-caption"><span>유망 순위는 예측 적중률이 아닌 <b>기술 점수</b>입니다.</span><label class="auto-wrap"><input type="checkbox" id="autoRefresh" checked><span>75초 간격 다시 분석</span></label></div>
+          <div class="rank-head"><span>순위 / 종목</span><span>가격</span><span>점수</span><span>매매 감시</span></div>
+          <div id="rankingList" class="ranking-list"><div class="empty-state"><div class="empty-glyph">⌁</div><h3>분석된 종목이 없습니다</h3><p>공식 TradingView 연동 후 버튼을 누르면 여기에서 기술 점수 순위가 표시됩니다.</p></div></div>
+          <div class="ranking-footer"><span>▲ 상승 모멘텀 · 유동성 · 리스크 필터</span><span id="rankingTimestamp">—</span></div>
+        </div>
+
+        <div class="right-pane panel">
+          <div class="chart-titlebar"><div><div class="eyebrow">TRADING TERMINAL</div><h2 id="selectedName">종목을 선택하세요</h2><div class="ticker-row"><span class="ticker-pill" id="selectedSymbol">—</span><span class="data-label" id="selectedFreshness">TradingView 차트 · 분석 대기</span></div></div><div class="chart-actions"><a id="tradingviewLink" href="https://kr.tradingview.com/" target="_blank" rel="noopener noreferrer">차트 확대 ↗</a></div></div>
+          <div class="chart-frame"><div id="tvChart" class="tv-chart"><div class="chart-loading">TradingView 차트를 불러옵니다...</div></div></div>
+          <div class="chart-disclaimer">차트는 TradingView 제공 위젯이며, 아래 신호는 MCP 분봉을 별도로 계산한 값입니다. 거래소·요금제에 따라 시세 지연이 발생할 수 있습니다.</div>
+          <div class="signals-title"><div><span class="eyebrow">MULTI-TIMEFRAME INTELLIGENCE</span><h3>분봉별 매매 타이밍</h3></div><span class="mini-tag" id="riskLegend">확정봉 기준 · 주문 아님</span></div>
+          <div class="timeframes" id="timeframeCards"><div class="timeframe-placeholder">분석 후 1분 · 5분 · 10분 · 30분 신호가 표시됩니다.</div></div>
+        </div>
+      </section>
+
+      <div class="bottom-grid">
+        <section class="panel plan-panel"><div class="panel-titlebar"><div><div class="eyebrow">TRADE PLAYBOOK</div><h2>조건부 매매 시나리오</h2></div><span class="info-badge neutral" id="planFrame">5분봉</span></div><div class="plan-intro" id="planIntro">종목과 분석 시간대를 선택하면 진입 트리거·손절가·1차/2차 목표가를 안내합니다.</div>
+          <div class="price-grid"><div class="price-item"><span>매수 진입 트리거</span><strong id="entryPrice">—</strong><small>돌파·재지지 확인 필요</small></div><div class="price-item"><span>손절 기준가</span><strong id="stopPrice" class="red-text">—</strong><small>이탈 시 재평가</small></div><div class="price-item"><span>1차 목표가</span><strong id="target1">—</strong><small>예시 보상 1.5R</small></div><div class="price-item"><span>2차 목표가</span><strong id="target2">—</strong><small>예시 보상 2.0R</small></div></div>
+          <div class="plan-footer"><span id="riskText">손절폭 계산 대기</span><span>실제 체결가·틱 단위·슬리피지 별도 확인</span></div>
+        </section>
+        <section class="panel watch-panel"><div class="panel-titlebar"><div><div class="eyebrow">CUSTOM UNIVERSE</div><h2>관심종목 직접 추가</h2></div><span class="info-badge neutral">KR / US</span></div><p class="watch-desc">전체 스크리너 후보에 사용자가 지정한 종목을 추가해 분석합니다. 종목은 실제 추천이 아닌 분석 대상입니다.</p><div class="watch-form"><input type="text" id="tickerInput" placeholder="NASDAQ:NVDA 또는 KRX:005930" autocomplete="off" spellcheck="false" maxlength="40"><button id="addTicker" type="button">+ 추가</button></div><div class="watch-header">내 관심종목 <span id="watchCount">0</span></div><div class="watch-chips" id="watchChips"><span class="muted">등록한 종목이 없습니다.</span></div><div class="watch-foot">새 종목은 다음 TOP 10 분석 시 포함됩니다. </div></section>
+      </div>
+      <footer class="footer"><div>TRADING PULSE <span>© 2026 · 개인 리서치 보조 도구</span></div><div>TradingView 공식 MCP · 1분봉 종가 확인 후 계산 · 실제 주문 미지원</div></footer>
+    </div>
+  </div>
+  <div class="modal-backdrop hidden" id="guideModal" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+    <div class="modal"><button id="guideClose" class="close" aria-label="닫기">✕</button><span class="eyebrow">SETUP & DATA INTEGRITY</span><h2 id="guideTitle">TradingView 공식 연동 안내</h2><ol><li>TradingView <b>Essential 이상</b> 계정을 준비합니다. 체험판은 MCP 연동 대상이 아닙니다.</li><li>아래 <b>TradingView 계정 연결</b> 버튼을 눌러 계정 인증을 시작합니다.</li><li>연결 주소가 나타나면 로그인 페이지를 열고 승인한 뒤 이 대시보드로 돌아옵니다.</li><li><b>TOP 10 지금 분석</b> 버튼을 누르면 공식 MCP에서 분봉을 조회합니다.</li></ol><div id="oauthPanel" class="oauth-panel"><button type="button" id="connectTv" class="primary-button">TradingView 계정 연결</button><div id="oauthFeedback" class="oauth-feedback" role="status">인증 링크와 계정 토큰은 브라우저에 저장하지 않습니다.</div></div><div class="modal-tip">실제 시세 및 지연은 시장·사용자 거래소 데이터 권한에 따라 달라집니다. 인증 토큰은 서버에만 보관됩니다. 이 웹앱은 비밀번호로 보호되는 개인용이며, 서버가 재시작되거나 무료 호스팅 저장공간이 초기화되면 재인증이 필요할 수 있습니다.</div><div class="modal-buttons"><a href="https://www.tradingview.com/mcp/docs" target="_blank" rel="noopener noreferrer">MCP 공식 문서 ↗</a><button id="guideDone">확인</button></div></div>
+  </div>
+  <div id="toast" class="toast hidden" role="alert"></div>
+  <script>
+/* This is a display-only browser preview, NOT a fake quote or analysis source. */
+const nativeFetch=window.fetch.bind(window);
+window.fetch=async function(path, opts){
+  if(typeof path==='string' && path.startsWith('/api/state')) {
+    const market=new URL('https://placeholder.test'+path).searchParams.get('market')||'US';
+    return new Response(JSON.stringify({market,connected:false,clock:{phase:'서버 미연동',state:'closed',local_time:new Date().toISOString(),kst_time:new Date().toISOString()},cached:null,watchlist:[],examples:[]}),{status:200,headers:{'Content-Type':'application/json'}});
+  }
+  return new Response(JSON.stringify({detail:'미리보기에서는 실제 스캔·인증이 불가능합니다. 클라우드에 배포된 웹앱 주소로 접속하세요.'}),{status:503,headers:{'Content-Type':'application/json'}});
+};
+</script><script>(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  let market = 'US';
+  let view = null;
+  let activeSymbol = null;
+  let activeFrame = '5';
+  let busy = false;
+  let scansSeen = {};
+  let toastTimer;
+
+  function html(s){return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function number(n, m=market){
+    if(n === null || n === undefined || !Number.isFinite(Number(n))) return '—';
+    const dec = m === 'KR' ? 0 : (Math.abs(Number(n)) < 1 ? 4 : 2);
+    return (m === 'US' ? '$' : '₩') + Number(n).toLocaleString('ko-KR',{minimumFractionDigits: dec,maximumFractionDigits:dec});
+  }
+  function dateKST(iso){if(!iso)return '—'; const d=new Date(iso);return Number.isNaN(d.valueOf())?'—':new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d);}
+  function timeKST(iso,zone='Asia/Seoul'){if(!iso)return '—';const d=new Date(iso); return Number.isNaN(d.valueOf())?'—':new Intl.DateTimeFormat('ko-KR',{timeZone:zone,hour:'2-digit',minute:'2-digit',hour12:false}).format(d);}
+  function clockTick(){ $('kstClock').textContent = 'KST '+new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); }
+  function statusClass(signal){return signal==='매수 감시'||signal==='돌파 확인'?'good':signal==='매도 검토'?'sell':'normal';}
+  function notify(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=> $('toast').classList.add('hidden'),5000);}
+  async function request(path,options={}){const res=await fetch(path,{credentials:'same-origin',...options,headers:{'Content-Type':'application/json',...(options.headers||{})}});if(res.status===401){window.location.href='/login';throw new Error('로그인 필요');}const body=await res.json().catch(()=>({}));if(!res.ok)throw new Error(typeof body.detail==='string'?body.detail:`서버 응답 오류 (${res.status})`);return body;}
+  function renderWatchlist(){
+    const list=view?.watchlist || [];
+    $('watchCount').textContent=list.length;
+    $('watchChips').innerHTML=list.length?list.map(s=>`<span class="watch-chip">${html(s)}<button type="button" data-delete="${html(s)}" title="삭제">×</button></span>`).join(''):'<span class="muted">추가된 관심종목이 없습니다. 기본 예시 종목은 자동으로 후보에 포함됩니다.</span>';
+    $('watchChips').querySelectorAll('[data-delete]').forEach(el=>el.onclick=async()=>{
+      try{await request('/api/watchlist',{method:'DELETE',body:JSON.stringify({market,symbol:el.dataset.delete})});await loadState();notify('관심종목에서 삭제했습니다.');}catch(e){notify(e.message);}
+    });
+  }
+  function renderChart(symbol='NASDAQ:NVDA',interval='5'){
+    const target=$('tvChart');target.textContent='';
+    // TradingView's hosted widget manages its own exchange feed and data entitlements.
+    // We DO NOT read its iframe data. Analyses are from official MCP tools.
+    const wrap=document.createElement('div');wrap.className='tradingview-widget-container';wrap.style.cssText='width:100%;height:100%';
+    const inner=document.createElement('div');inner.className='tradingview-widget-container__widget';inner.style.cssText='height:100%;width:100%';
+    wrap.appendChild(inner);
+    const js=document.createElement('script');js.type='text/javascript';js.async=true;js.src='https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+    js.textContent=JSON.stringify({autosize:true,symbol,interval,timezone:'Asia/Seoul',theme:'dark',style:'1',locale:'kr',allow_symbol_change:true,save_image:false,hide_top_toolbar:false,hide_side_toolbar:false,withdateranges:false,hide_volume:false,backgroundColor:'#0b1422',gridColor:'rgba(55,75,92,0.17)'});
+    wrap.appendChild(js);target.appendChild(wrap);
+    $('tradingviewLink').href='https://kr.tradingview.com/chart/?symbol='+encodeURIComponent(symbol);
+  }
+  function renderRanking(){
+    const rows=view?.cached?.results || [];
+    $('candidateCount').textContent=view?.cached?.candidate_count??'—';
+    $('scanUpdated').textContent=view?.cached?.generated_at?dateKST(view.cached.generated_at):'분석 전';
+    $('rankingTimestamp').textContent=view?.cached?.generated_at?'분석 '+dateKST(view.cached.generated_at)+' KST':'—';
+    $('rankingMarket').textContent=market==='KR'?'국내':'미국';
+    $('rankingData').textContent=rows.length?`${rows.length}개 분석 완료`:'데이터 대기';
+    $('rankingData').classList.toggle('neutral',!rows.length);
+    $('buySignalCount').textContent=rows.length?rows.filter(x=>x.fresh&&['돌파 확인','매수 감시'].includes(x.signal)).length:'—';
+    const v=rows[0];
+    $('sourceStatus').textContent=v?.fresh?'TradingView MCP 확정봉':'시장 상태 및 데이터 시각 확인 필요';
+    if(!rows.length){
+      $('rankingList').innerHTML='<div class="empty-state"><div class="empty-glyph">⌁</div><h3>확인된 추천 데이터가 없습니다</h3><p>TradingView 인증 후 TOP 10 분석을 실행하세요. 시세가 부족한 경우 순위를 만들지 않습니다.</p></div>';
+      if(!activeSymbol){activeSymbol=market==='KR'?'KRX:005930':'NASDAQ:NVDA';renderChart(activeSymbol,activeFrame);}
+      renderDetail();return;
+    }
+    if(!rows.some(x=>x.symbol===activeSymbol))activeSymbol=rows[0].symbol;
+    $('rankingList').innerHTML=rows.map((r,i)=>{
+      const kind=r.fresh?r.signal:'지난 데이터';
+      const isHigh=r.rank_score>=65;
+      return `<button type="button" class="ranking-item ${r.symbol===activeSymbol?'selected':''}" data-symbol="${html(r.symbol)}"><span class="rank-name"><span class="rank-num">${String(i+1).padStart(2,'0')}</span><span class="rank-company"><strong>${html(r.name)}</strong><small>${html(r.symbol)} ${r.data_age_sec!=null?`· ${r.data_age_sec}초 지연/경과`:''}</small></span></span><span class="rank-price">${html(number(r.current))}<small>${r.screener_change_pct!=null?(r.screener_change_pct>0?'+':'')+Number(r.screener_change_pct).toFixed(2)+'%':'확정봉 가격'}</small></span><span class="rank-score ${isHigh?'':'low'}">${r.rank_score??'—'}</span><span class="signal-chip ${r.fresh?statusClass(kind)==='sell'?'sell':statusClass(kind)==='good'?'':'wait':'wait'}">${html(kind)}</span></button>`;
+    }).join('');
+    $('rankingList').querySelectorAll('button[data-symbol]').forEach(el=>el.onclick=()=>{activeSymbol=el.dataset.symbol;renderRanking();renderDetail();renderChart(activeSymbol,activeFrame);});
+    renderDetail();
+  }
+  function renderDetail(){
+    const row=(view?.cached?.results||[]).find(x=>x.symbol===activeSymbol);
+    $('selectedSymbol').textContent=activeSymbol||'—';
+    $('selectedName').textContent=row?.name||'TradingView 예시 차트';
+    $('selectedFreshness').textContent=row?.bar_time?`${row.fresh?'최근 확정 1분봉':'비실시간 / 지난 분봉'} · ${dateKST(new Date(row.bar_time*1000).toISOString())} KST · ${row.data_age_sec??'—'}초 경과/지연`:'분석 데이터 없음 · 차트는 별도 위젯';
+    if(!row){$('timeframeCards').innerHTML='<div class="timeframe-placeholder">실제 분봉 분석을 시작하면 4개 시간대의 신호가 표시됩니다.</div>';resetPlan();return;}
+    const frames=row.frames||{};
+    $('timeframeCards').innerHTML=['1','5','10','30'].map(n=>{
+      const f=frames[n]||{};const active=activeFrame===n;
+      const s=f.signal||'데이터 대기';
+      return `<button type="button" class="timeframe-card ${active?'selected':''}" data-frame="${n}"><h4><strong>${n}분</strong><span>${f.bar_count??0}봉</span></h4><div class="timeframe-status ${statusClass(s)}">${html(s)}</div><div class="timeframe-meta">RSI <b>${f.rsi??'—'}</b><br>거래량배수 <b>${f.relative_volume==null?'—':f.relative_volume+'x'}</b><br>점수 <b>${f.score??'—'}</b></div></button>`;
+    }).join('');
+    $('timeframeCards').querySelectorAll('button[data-frame]').forEach(el=>el.onclick=()=>{activeFrame=el.dataset.frame;renderDetail();renderChart(activeSymbol,activeFrame);});
+    const f=frames[activeFrame]||{};
+    $('planFrame').textContent=activeFrame+'분봉';
+    if(f.status!=='분석 완료'){resetPlan();$('planIntro').textContent=`${activeFrame}분봉: ${f.bar_count??0}개 확정봉 · 분석 최소 ${f.required_bars||25}개가 필요합니다.`;return;}
+    $('planIntro').textContent=row.fresh?`${f.signal} · ${row.reason||'확정봉 조건 확인'} · 매수가 돌파 후 거래량 재확인 필요`:`주의: 현재 ${row.quote_state}. 아래 가격은 마지막 확보된 분봉의 과거 시나리오이며 실시간 주문 지시가 아닙니다.`;
+    $('entryPrice').textContent=number(f.entry_trigger);$('stopPrice').textContent=number(f.stop);$('target1').textContent=number(f.target1);$('target2').textContent=number(f.target2);
+    $('riskText').textContent='진입가 대비 손절폭 '+(f.risk_pct??'—')+'% · 전략상 보상/위험 2.0R';
+  }
+  function resetPlan(){['entryPrice','stopPrice','target1','target2'].forEach(id=>$(id).textContent='—');$('riskText').textContent='충분한 실제 데이터 확보 후 계산';$('planIntro').textContent='종목과 분석 시간대를 선택하면 진입·손절·목표가를 안내합니다.';}
+  function renderState(){
+    if(!view)return;
+    const c=view.clock||{};
+    $('marketPhase').textContent=c.phase||'확인 불가';
+    $('marketLocal').textContent=(market==='US'?'뉴욕':'서울')+' 현지 '+timeKST(c.local_time,market==='US'?'America/New_York':'Asia/Seoul')+' · 한국 '+timeKST(c.kst_time);
+    $('connStatus').classList.toggle('ready',view.connected);
+    $('connStatus').innerHTML=`<span class="dot"></span>${view.connected?'MCP 인증 파일 있음':'TradingView 인증 필요'}`;
+    document.querySelectorAll('[data-market]').forEach(b=>b.classList.toggle('active',b.dataset.market===market));
+    if(view.cached?.results?.length){
+      const good=view.cached.results.filter(r=>r.fresh).length;
+      $('notice').className='notice '+(good?'success':'');
+      $('notice').innerHTML= good?`공식 TradingView 분봉 데이터로 ${good}개 종목의 최근 정규장 확정봉을 확인했습니다. 신호는 주문 실행이 아닌 참고용입니다.`:`저장된 분석 결과가 표시됩니다. <b>시장이 닫혔거나 시세가 오래되어 실시간 신호가 아닙니다.</b> ${view.cached.warnings?.length?'일부 스크리너 응답에 문제가 있어 관심종목 분석이 포함됐습니다.':''}`;
+    } else {
+      $('notice').className='notice';$('notice').innerHTML=view.connected?'연동 정보가 저장되어 있습니다. <b>TOP 10 지금 분석</b>을 눌러 실제 시장 데이터를 조회하세요.':'TradingView 계정 인증 전입니다. <b>연동 안내</b>를 눌러 공식 MCP를 연결하세요. 예시 시세를 표시하지 않습니다.';
+    }
+    renderWatchlist();renderRanking();
+  }
+  async function loadState(){view=await request('/api/state?market='+market);renderState();}
+  async function scan(auto=false){
+    if(busy)return;
+    if(!view?.connected){$('guideModal').classList.remove('hidden');notify('TradingView 인증 후 실시간 분석을 이용할 수 있습니다.');return;}
+    busy=true;$('scanButton').disabled=true;$('scanLabel').textContent='공식 데이터 분석 중…';
+    $('notice').textContent='TradingView 스크리너 + 분봉 데이터 수집 중입니다. 연결 상황에 따라 작업이 실패할 수 있습니다.';
+    try{
+      const previous=new Map((view?.cached?.results||[]).map(r=>[r.symbol,r.signal]));
+      const result=await request('/api/scan',{method:'POST',body:JSON.stringify({market})});
+      if(view){view.cached=result;view.connected=true;}
+      renderState();notify(result.from_cache?'최근 분석 결과를 다시 표시했습니다.':'실제 확정 분봉으로 TOP 10 순위를 갱신했습니다.');
+      if(auto && 'Notification' in window && Notification.permission==='granted'){
+        for(const row of result.results||[]){
+          if(row.fresh && ['매수 감시','돌파 확인'].includes(row.signal) && previous.get(row.symbol)!==row.signal && scansSeen[row.symbol]!==row.signal){
+            new Notification('TRADING PULSE · '+row.symbol,{body:row.signal+' · 점수 '+row.rank_score+' (확정봉 조건부)'});scansSeen[row.symbol]=row.signal;
+          }
+        }
+      }
+    }catch(e){$('notice').className='notice error';$('notice').textContent=e.message;notify(e.message);}finally{busy=false;$('scanButton').disabled=false;$('scanLabel').textContent='TOP 10 지금 분석';}
+  }
+  async function switchMarket(next){if(market===next)return;market=next;activeSymbol=null;activeFrame='5';view=null;document.querySelectorAll('[data-market]').forEach(b=>b.classList.toggle('active',b.dataset.market===market));$('rankingList').innerHTML='<div class="empty-state"><h3>시장 정보 불러오는 중</h3></div>';try{await loadState();}catch(e){notify(e.message);}renderChart(activeSymbol||(market==='KR'?'KRX:005930':'NASDAQ:NVDA'),activeFrame);}
+  function openGuide(){$('guideModal').classList.remove('hidden');}
+  let oauthPoll=null;
+  async function beginTradingViewOAuth(){
+    const feedback=$('oauthFeedback');
+    feedback.textContent='TradingView 인증 주소를 준비하고 있습니다…';
+    $('connectTv').disabled=true;
+    try{
+      await request('/api/auth/start',{method:'POST',body:'{}'});
+      clearInterval(oauthPoll);
+      await readAuthStatus();
+      oauthPoll=setInterval(readAuthStatus,1500);
+    }catch(e){feedback.textContent='인증 시작 실패: '+e.message;$('connectTv').disabled=false;}
+  }
+  async function readAuthStatus(){
+    try{
+      const status=await request('/api/auth/status');
+      const feedback=$('oauthFeedback');
+      if(status.status==='connected'){
+        feedback.textContent='TradingView 연결이 완료되었습니다. TOP 10을 분석하세요.';
+        $('connectTv').disabled=false;
+        clearInterval(oauthPoll);await loadState();
+      }else if(status.status==='error'){
+        feedback.textContent='연동 오류: '+(status.error||'알 수 없는 오류');
+        $('connectTv').disabled=false;clearInterval(oauthPoll);
+      }else if(status.url){
+        feedback.textContent='';
+        const text=document.createTextNode('아래 링크를 새 탭에서 열어 로그인·승인하세요. ');
+        const link=document.createElement('a');link.href=status.url;link.textContent='TradingView 인증 페이지 열기 ↗';link.target='_blank';link.rel='noopener noreferrer';
+        feedback.appendChild(text);feedback.appendChild(link);
+      }else{
+        feedback.textContent='공식 MCP 인증 서버 응답을 기다리는 중…';
+      }
+    }catch(e){$('oauthFeedback').textContent='인증 확인 중 오류: '+e.message;clearInterval(oauthPoll);$('connectTv').disabled=false;}
+  }
+  function closeGuide(){$('guideModal').classList.add('hidden');}
+  async function addTicker(){const symbol=$('tickerInput').value.trim().toUpperCase();if(!symbol){notify('거래소와 종목코드를 입력하세요.');return;}try{await request('/api/watchlist',{method:'POST',body:JSON.stringify({market,symbol})});$('tickerInput').value='';await loadState();notify('다음 스캔 분석 대상에 추가했습니다.');}catch(e){notify(e.message);}}
+  $('connectTv').onclick=beginTradingViewOAuth;$('guideButton').onclick=openGuide;$('guideClose').onclick=closeGuide;$('guideDone').onclick=closeGuide;$('guideModal').onclick=e=>{if(e.target===$('guideModal'))closeGuide();};
+  $('scanButton').onclick=()=>scan(false);$('tabUS').onclick=()=>switchMarket('US');$('tabKR').onclick=()=>switchMarket('KR');$('addTicker').onclick=addTicker;$('tickerInput').onkeydown=e=>{if(e.key==='Enter')addTicker();};
+  clockTick();setInterval(clockTick,1000);
+  // Each re-scan can use up to about 30 official MCP tool calls. One market at a time.
+  setInterval(()=>{if($('autoRefresh').checked&&document.visibilityState==='visible'&&view?.connected)scan(true);},75000);
+  loadState().then(()=>renderChart(activeSymbol||'NASDAQ:NVDA',activeFrame)).catch(e=>{notify('서버 연결 오류: '+e.message);});
+})();
+</script>
+</body>
+</html>
